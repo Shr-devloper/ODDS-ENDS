@@ -1,0 +1,248 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;  /* stack header → content → footer */
+  align-items: center;    /* make header/footer full width */
+  padding: 0;              /* remove global padding, let container handle its own */
+  overflow-x: hidden;
+}
+
+/* Navbar Fix */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 50px;
+  top: 0;                 
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: 0.3s;
+}
+main {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding-top: 80px;       
+  padding-bottom: 40px;    
+}
+
+.logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-items {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-items:hover {
+    color: #76ff03;
+    transform: translateY(-3px);
+}
+
+/* Container stays in the middle */
+.suggestion-container {
+  background: rgba(30, 30, 30, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
+  max-width: 500px;
+  width: 100%;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+
+h2 {
+  color: #00ffb3;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+  color: #f4f4f4;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #1f1f1f;
+  color: #fff;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00ffb3;
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #1f3f1e, #358a75);
+  color: #000;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 255, 179, 0.4);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul li {
+  background: #222;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #ddd;
+  border-left: 4px solid #40554f;
+  text-align: left;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  padding: 20px;
+  box-shadow: -3px 0 15px rgba(0, 255, 179, 0.2);
+  transition: right 0.4s ease-in-out;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+  color: #00ffb3;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+
+/* Sidebar Button */
+.sidebar-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #538e4e, #112520);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.sidebar-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 255, 179, 0.4);
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .suggestion-container {
+    padding: 25px 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+}
+footer {
+  /* background: #000; */
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 0.9rem;
+  border-top: 1px solid rgb(12, 19, 13);
+  margin-top: auto;
+  width: 100vw;
+}
+
+footer a {
+  color: #00ff88;
+  text-decoration: none;
+  transition: 0.3s;
+}
+footer a:hover {
+  color: #fff;
+}

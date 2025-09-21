@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Waste-to-Craft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #0f2027, #081c15, #000000);
+      color: #f5f5f5;
+      overflow-x: hidden;
+      width: 100vw;
+    }
+
+    /* Floating Eco Icons in Background */
+    body::before {
+      content: "♻️ 🌱 ✂️ 💡";
+      font-size: 6rem;
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      opacity: 0.05;
+      white-space: pre;
+      animation: float 12s infinite alternate ease-in-out;
+    }
+
+    nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.3s;
+    margin-left: -40px;
+}
+
+.logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-items {
+    color: rgb(7, 193, 183);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-items:hover {
+    color: #76ff03;
+    transform: translateY(-3px);
+}
+
+    @keyframes float {
+      from { transform: translateY(0px);}
+      to { transform: translateY(40px);}
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+      background: transparent;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ff88;
+      text-shadow: 0 0 25px rgba(0, 255, 136, 0.7);
+      animation: fadeDown 1.2s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-top: 15px;
+      line-height: 1.6;
+      color: #cfcfcf;
+      animation: fadeUp 1.4s ease-in-out;
+    }
+
+    /* About Cards (Glassmorphism) */
+    .about-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 80px 10%;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0,255,136,0.6);
+    }
+    .card h3 {
+      color: #00ff88;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #d6d6d6;
+    }
+
+    /* Mission Section */
+    .mission {
+      padding: 80px 10%;
+      text-align: center;
+      background: linear-gradient(135deg, #000, #0a1a14);
+      border-top: 2px solid rgba(0,255,136,0.3);
+      border-bottom: 2px solid rgba(0,255,136,0.3);
+    }
+    .mission h2 {
+      color: #00ff88;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
+    }
+    .mission p {
+      color: #cfcfcf;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* Counters */
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      gap: 50px;
+      margin-top: 40px;
+    }
+    .counter {
+      text-align: center;
+    }
+    .counter h3 {
+      font-size: 2.5rem;
+      color: #00ff88;
+      text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+    }
+    .counter p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #aaa;
+
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid #0f3;
+    }
+    footer a {
+      color: #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="assests/images/logo.png" alt=""></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="suggestion-box.html" class="nav-items">Suggestion Area</a>
+            <a href="search.html" class="nav-items">Search Ideas</a>
+             <a href="blog.html" class="nav-items">Blogs</a>
+            <a href="aboutus.html"  class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>About</h1>
+    <h1>ODDS&ENDS</h1>
+    <p>Turning waste into wonders 🌱 Our mission is to inspire creativity, reduce waste, and build a strong community of eco-friendly creators who believe in the power of transformation.</p>
+  </section>
+
+  <!-- About Cards -->
+  <section class="about-section">
+    <div class="card">
+      <h3>♻️ Sustainability</h3>
+      <p>We aim to reduce waste by transforming discarded materials into something useful and beautiful.</p>
+    </div>
+    <div class="card">
+      <h3>🎨 Creativity</h3>
+      <p>Encouraging people to unleash their imagination by crafting unique DIY projects from everyday waste.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Community</h3>
+      <p>Building a global community where people can share, inspire, and celebrate eco-friendly creations.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <p>We believe waste is just an opportunity waiting for imagination. By merging creativity and sustainability, we empower people to craft a greener future — one project at a time.</p>
+    
+    <!-- Counters -->
+    <div class="counters">
+      <div class="counter">
+        <h3>RECONNECT</h3>
+        <p class="counterpara">The Nation</p>
+      </div>
+      <div class="counter">
+        <h3>BUILD</h3>
+        <p class="counterpara">Safer Environment</p>
+      </div>
+      <div class="counter">
+        <h3>GO</h3>
+        <p class="counterpara">Green</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>© 2025 ODDS&ENDS| Built with ♻️ creativity for a sustainable tomorrow. <br> Connect with us on <a href="#">YouTube</a> & <a href="#">Instagram</a></p>
+  </footer>
+
+</body>
+</html>

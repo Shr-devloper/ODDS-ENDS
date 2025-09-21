@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const userId = localStorage.getItem("userId");
+      if (!userId) window.location.href = "signin.html"; 
+    });
+  </script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html"><img class="logoimg" src="logo.png" alt=""></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search Ideas</a>
+      <a href="suggestion-box.html">Suggestion Box</a>
+      <a href="blog.html">Blogs</a>
+      <a href="aboutus.html">About</a>
+      <a href="community.html">Community</a>
+    </div>
+    <button class="logout" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<main class="profile-wrapper">
+  <!-- User Info -->
+  <section class="profile-card">
+    <h2>👤 User Profile</h2>
+    <p><strong>Username:</strong> <span id="username-display"></span></p>
+    <p><strong>Credits:</strong> <span id="credits-display"></span></p>
+  </section>
+
+  <!-- Wallet Section -->
+  <section class="profile-card">
+    <h3>💳 Wallet</h3>
+    <button id="connectWallet" class="btn">🔗 Connect Wallet</button>
+    <p id="wallet-display">Not connected</p>
+  </section>
+
+  <!-- Badge Claim -->
+  <section class="profile-card" id="claim-area" style="display:none;">
+    <h3>🎖 Achievements</h3>
+    <button id="claimBadgeBtn" class="btn btn-badge">Claim On-Chain Badge (100 credits)</button>
+    <p id="badgeStatus"></p>
+  </section>
+
+  <!-- Admin Mint -->
+  <section class="profile-card admin-section">
+    <h3>⚡ Admin Mint (Demo)</h3>
+    <input id="adminAddress" placeholder="User wallet address">
+    <input id="adminAmount" placeholder="Amount (ECO)" type="number">
+    <button id="adminMintBtn" class="btn">Mint Token</button>
+  </section>
+
+  <!-- Search History -->
+  <section class="profile-card">
+    <h3>🔍 Search History</h3>
+    <ul id="search-history"></ul>
+  </section>
+
+  <!-- Certificate -->
+  <section class="profile-card certificate-container" id="certificate-section" style="display:none;">
+    <h3> Achievement Certificate</h3>
+    <iframe id="certificateFrame"></iframe>
+    <button id="downloadCertificate" class="btn btn-gradient">Download Certificate</button>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 ODDS&ENDS | Built with ♻️ creativity for a sustainable tomorrow. <br> 
+    Connect with us on <a href="#">YouTube</a> & <a href="#">Instagram</a>
+  </p>
+</footer>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script> -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script type="module" src="profile.js"></script>
+</body>
+</html>

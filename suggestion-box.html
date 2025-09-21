@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Box</title>
+    <link rel="stylesheet" href="suggestion.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!localStorage.getItem("userId")) {
+                window.location.href = "signin.html";
+            }
+        });
+    </script>
+</head>
+<body>
+
+     <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.png" alt=""></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="suggestion-box.html" class="nav-items">Suggestion Area</a>
+            <a href="search.html" class="nav-items">Search Ideas</a>
+            <a href="blog.html" class="nav-items">Blogs</a>
+            <a href="aboutus.html"  class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+
+<div class="suggestion-container">
+    <h2>Share Your Creative Idea! 🎨</h2>
+    <p style="font-weight: bold;">Have an amazing way to turn waste into art? Share your idea and earn credits!</p>
+
+    <form id="suggestion-form">
+        <label for="idea-title">Idea Title:</label>
+        <input style="font-weight: bold;" type="text" id="idea-title" placeholder="Give your idea a catchy title" required>
+
+        <label for="idea-description">Describe Your Idea:</label>
+        <textarea style="font-weight: bold;" id="idea-description" placeholder="Explain how to turn waste into art..." required></textarea>
+
+        <button style="font-weight: bold;" type="submit" class="submit-btn">Submit Idea</button>
+    </form>
+
+    <button style="font-weight: bold; font-style: italic;" id="toggle-sidebar" class="sidebar-btn">📜 View Submitted Ideas</button>
+
+    
+</div>
+
+ <footer>
+    <p>© 2025 ODDS&ENDS| Built with ♻️ creativity for a sustainable tomorrow. <br> Connect with us on <a href="#">YouTube</a> & <a href="#">Instagram</a></p>
+  </footer>
+<!-- Sidebar -->
+<div id="idea-sidebar" class="sidebar">
+    <h3>📌 Your Submitted Ideas</h3>
+    <ul id="idea-list"></ul>
+</div>
+
+<script type="module" src="suggestion.js"></script>
+
+</body>
+</html>

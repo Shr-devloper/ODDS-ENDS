@@ -1,0 +1,248 @@
+/* blogs.css - shared styling for blog pages (Waste-to-Craft theme) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --bg1: #0f2027;
+    --bg2: #081c15;
+    --accent: #00ff88;
+    --muted: #cfcfcf;
+    --card: rgba(18, 18, 18, 0.9);
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(circle at 10% 10%, var(--bg1), var(--bg2) 60%, #000 100%);
+    color: #e9f8f0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header / Nav */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    background: rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.05);
+}
+
+nav .logo img {
+    height: 40px
+}
+
+nav .links {
+    display: flex;
+    gap: 14px
+}
+
+nav a {
+    color: #eafdf3;
+    text-decoration: none;
+    font-weight: 600
+}
+
+nav a:hover {
+    color: var(--accent);
+    transform: translateY(-2px)
+}
+
+/* Page wrapper */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+/* Article card */
+.article {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 136, 0.06);
+}
+
+.article .eyebrow {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px
+}
+
+.article h1 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 8px
+}
+
+.article .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 18px
+}
+
+/* hero image */
+.article .hero-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 12px 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* two column layout for content & sidebar */
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 22px
+}
+
+@media (max-width:980px) {
+    .article-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* content */
+.article .content p {
+    color: #d9efe6;
+    margin-bottom: 12px
+}
+
+.article h2 {
+    color: #dfffe8;
+    margin-top: 18px;
+    margin-bottom: 10px
+}
+
+.article ul {
+    margin-left: 18px;
+    margin-bottom: 12px
+}
+
+.article li {
+    margin-bottom: 8px;
+    color: #e6f6ee
+}
+
+/* sidebar */
+.sidebar {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.18));
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.04);
+}
+
+.kv {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.03)
+}
+
+.kv strong {
+    color: var(--accent)
+}
+
+/* callout box */
+.callout {
+    background: linear-gradient(180deg, rgba(0, 255, 136, 0.04), rgba(0, 255, 136, 0.02));
+    border-left: 4px solid var(--accent);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    color: #0b1b16
+}
+
+/* footer */
+footer {
+    background: #000;
+    padding: 18px 20px;
+    color: #9aa;
+    text-align: center;
+    border-top: 1px solid rgba(0, 255, 136, 0.04)
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none
+}
+
+/* place this below the shared blogs.css contents, or merge accordingly */
+
+.quick-take {
+    background: rgba(0, 255, 136, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 18px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+}
+
+.quick-take h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.toggle-more {
+    background: var(--accent);
+    color: #000;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.toggle-more:hover {
+    background: #66ffa5;
+}
+
+.related-card {
+    display: block;
+    background: rgba(0, 255, 136, 0.2);
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 4px 0;
+}
+
+.related-card:hover {
+    background: #0cff88;
+    color: #021;
+}
+
+/* Adjust paragraph & heading spacing for easier reading */
+.article .content p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.article .content li {
+    font-size: 1rem;
+}

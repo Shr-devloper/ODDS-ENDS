@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="search.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const userId = localStorage.getItem("userId");
+    
+        // Redirect to login page if not logged in
+        if (!userId) {
+          window.location.href = "signin.html";
+        }
+      });
+    </script>
+    
+    
+</head>
+<body>
+
+   <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.png" alt=""></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="suggestion-box.html" class="nav-items">Suggestion Area</a>
+            <a href="search.html" class="nav-items">Search Ideas</a>
+            <a href="blog.html" class="nav-items">Blogs</a>
+            <a href="aboutus.html"  class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+<section class="input-section">
+  <div class="container">
+    <h2>Enter Your Waste Items</h2>
+    <p>Tell us what waste items you have, and we'll suggest fun DIY projects!</p>
+
+    <form id="waste-form">
+      <label for="waste-items" class="input-label">Waste Items (only lowercase allowed):</label>
+      <input type="text" id="waste-items" name="waste-items" placeholder="e.g., plastic bottle, old t-shirt" required>
+
+      <button type="submit" class="submit-btn">Get Ideas</button>
+    </form>
+  </div>
+</section>
+<section id="project-ideas" class="project-ideas">
+  <div class="container">
+    <h2>Suggested Projects</h2>
+    <p>Based on your input, here are some cool DIY projects:</p>
+
+    <div id="ideas-list" class="ideas-list">
+      <!-- Dynamic project ideas will appear here -->
+    </div>
+  </div>
+</section>
+ <footer>
+    <p>© 2025 ODDS&ENDS| Built with ♻️ creativity for a sustainable tomorrow. <br> Connect with us on <a href="#">YouTube</a> & <a href="#">Instagram</a></p>
+  </footer>
+<script type="module" src="app.js"></script>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="search.js"></script>
+
+</body>
+</html>

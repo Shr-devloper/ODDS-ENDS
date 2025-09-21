@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>E-Waste Jewelry | Waste-to-Craft</title>
+  <link rel="stylesheet" href="blogs1.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html"><img src="assests/images/logo.png" alt="logo"></a>
+    <div class="links">
+      <a href="blog.html">Blogs</a>
+      <a href="community.html">Community</a>
+      <a href="suggestion-box.html">Submit Idea</a>
+      <a href="search.html">Search</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="article">
+      <div class="quick-take">
+        <h1>E-Waste Jewelry: Old Electronics, New Shine</h1>
+        <ul>
+          <li>Turn circuit boards, wires & buttons into wearable art</li>
+          <li>Minimal tools — mostly glue, wire cutters, tape</li>
+          <li>Perfect for gifts, crafts fairs, and personal style</li>
+          <li>Highlights tech + sustainability</li>
+        </ul>
+      </div>
+
+      <img class="hero-img" src="assests/images/ewaste-jewelry.jpg" alt="Jewelry made from e-waste">
+
+      <div class="article-grid">
+        <section class="content">
+
+          <h2>🔧 Materials & Tools</h2>
+          <ul>
+            <li>Old circuit boards, motherboard fragments</li>
+            <li>Small capacitors, resistors, beads, buttons</li>
+            <li>Wire cutters, pliers, soldering iron (optional)</li>
+            <li>E6000 or strong epoxy glue</li>
+            <li>Backing (earring hooks, chain, brooch pins)</li>
+          </ul>
+
+          <h2>💡 Projects You Can Make</h2>
+          <ol>
+            <li><strong>Circuit board pendants:</strong> cut clean shapes, sand edges, polish surface.</li>
+            <li><strong>Button & bead earrings:</strong> use old buttons/LED covers for sparkle.</li>
+            <li><strong>Wire-wrapped rings:</strong> twist wires around small board bits or stones.</li>
+          </ol>
+
+          <button class="toggle-more">More Techniques & Style Tips ↓</button>
+          <div class="more-section" style="display:none;">
+            <h2>✨ Style & Finishing Tips</h2>
+            <ul>
+              <li>Seal board surfaces with resin or clear varnish to prevent peeling.</li>
+              <li>Use wire plating or metallic paints for shine.</li>
+              <li>Leather or fabric backs add comfort for earrings.</li>
+              <li>Use asymmetry & mixed materials (wood + board + buttons).</li>
+            </ul>
+            <h2>👤 Safety & Environmental Notes</h2>
+            <ul>
+              <li>Wash hands after handling solder or circuit material.</li>
+              <li>Avoid toxic coatings; only use electronics you know are safe.</li>
+              <li>Recycle leftover bits properly; small parts are hazardous waste in some areas.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <aside class="sidebar">
+          <div class="kv"><span>Time</span><strong>2-4 hrs</strong></div>
+          <div class="kv"><span>Skill</span><strong>Intermediate</strong></div>
+          <div class="kv"><span>Cost</span><strong>Low-Medium</strong></div>
+
+          <h3>Ideas & Variations</h3>
+          <ul>
+            <li>Pendant + chain sets</li>
+            <li>Brooch pin-boards</li>
+            <li>LED cover earrings or cuff links</li>
+          </ul>
+
+          
+          <div class="related">
+            <h3>Related Reads</h3>
+            <a class="related-card" href="blog2.html">Newspaper Wall Art Guide →</a><br>
+            <a class="related-card" href="blog1.html">Plastic Bottles into Vertical Gardens →</a>
+          </div>
+
+          <div class="back-link" style="margin-top:20px;">
+            <a href="blog.html">← Back to Blogs</a>
+          </div>
+        </aside>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <small>Sources: Maker blogs, electronics DIY forums, Pinterest crafts. © 2025 ODDS&ENDS</small>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.toggle-more');
+    const section = document.querySelector('.more-section');
+    btn.addEventListener('click', () => {
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        btn.textContent = 'Show Less ↑';
+      } else {
+        section.style.display = 'none';
+        btn.textContent = 'More Techniques & Style Tips ↓';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

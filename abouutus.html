@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | National Waste Management Authority</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #0f2027, #081c15, #000000);
+      color: #f5f5f5;
+      overflow-x: hidden;
+      width: 100vw;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 50px;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: 0.3s;
+      margin-left: -40px;
+      background: rgba(0,0,0,0.8);
+    }
+
+    .logo img {
+      width: 140px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-items {
+      color: rgb(7, 193, 183);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-items:hover {
+      color: #76ff03;
+      transform: translateY(-3px);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+      background: transparent;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ff88;
+      text-shadow: 0 0 25px rgba(0, 255, 136, 0.7);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin-top: 15px;
+      line-height: 1.7;
+      color: #dcdcdc;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 10%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: left;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0,255,136,0.5);
+    }
+    .card h3 {
+      color: #00ff88;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #cccccc;
+    }
+
+    /* Mission Section */
+    .mission {
+      padding: 80px 10%;
+      text-align: center;
+      background: linear-gradient(135deg, #000, #0a1a14);
+      border-top: 2px solid rgba(0,255,136,0.3);
+      border-bottom: 2px solid rgba(0,255,136,0.3);
+    }
+    .mission h2 {
+      color: #00ff88;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .mission p {
+      color: #d0d0d0;
+      font-size: 1.05rem;
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid #0f3;
+    }
+    footer a {
+      color: #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="assests/images/logo.png" alt="Gov Logo"></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="policy.html" class="nav-items">Policies</a>
+            <a href="initiatives.html" class="nav-items">Initiatives</a>
+            <a href="reports.html" class="nav-items">Reports</a>
+            <a href="aboutus.html" class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>About Us</h1>
+    <p>The National Waste Management Authority is committed to ensuring sustainable, scientific, and inclusive waste management across the nation. Through innovation, regulation, and community engagement, we aim to safeguard the environment and promote a cleaner, greener future for generations to come.</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="card">
+      <h3>Who We Are</h3>
+      <p>We are a statutory body under the Ministry of Environment, Forest and Climate Change, dedicated to the scientific management of solid, liquid, and hazardous waste at national, state, and municipal levels.</p>
+    </div>
+    <div class="card">
+      <h3>Our Objectives</h3>
+      <p>To reduce environmental hazards by enforcing waste management policies, ensuring recycling, and promoting sustainable practices aligned with national climate goals.</p>
+    </div>
+    <div class="card">
+      <h3>Our Approach</h3>
+      <p>We integrate advanced technologies with traditional practices, focusing on segregation at source, recycling, and resource recovery to minimize landfill dependency.</p>
+    </div>
+    <div class="card">
+      <h3>Community Involvement</h3>
+      <p>Through awareness campaigns, partnerships with local bodies, and public participation programs, we empower citizens to become active contributors in building a cleaner India.</p>
+    </div>
+    <div class="card">
+      <h3>National Goals</h3>
+      <p>Aligning with the Swachh Bharat Mission and the United Nations Sustainable Development Goals, we strive for a zero-waste future and sustainable urban development.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <p>To establish a robust and sustainable waste management framework that ensures environmental protection, efficient resource recovery, and public health safety, while fostering innovation, accountability, and inclusivity at all levels of governance.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 National Waste Management Authority | Government of India. <br> Connect with us on <a href="#">Official Portal</a> & <a href="#">Gov Social</a></p>
+  </footer>
+
+</body>
+</html>

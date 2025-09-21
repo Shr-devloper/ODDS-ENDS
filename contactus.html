@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | ODDS&ENDS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #0f2027, #081c15, #000000);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "♻️ 🌱 ✂️ 💡";
+      font-size: 6rem;
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      opacity: 0.05;
+      white-space: pre;
+      animation: float 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px);}
+      to { transform: translateY(40px);}
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 10%;
+      gap: 50px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      box-shadow: 0 0 25px rgba(0,255,136,0.2);
+    }
+    .contact-form h2 {
+      text-align: center;
+      color: #00ff88;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-size: 0.95rem;
+      color: #cfcfcf;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 1px solid rgba(0,255,136,0.3);
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus {
+      border-color: #00ff88;
+      box-shadow: 0 0 10px rgba(0,255,136,0.6);
+    }
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #00ff88;
+      color: #000;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background: #0aff99;
+      box-shadow: 0 0 20px rgba(0,255,136,0.6);
+    }
+
+    /* Contact Info Section */
+    .contact-info {
+      flex: 1;
+      padding: 30px;
+    }
+    .contact-info h2 {
+      color: #00ff88;
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .info-item {
+      margin-bottom: 20px;
+    }
+    .info-item span {
+      font-weight: bold;
+      color: #00ff88;
+    }
+    .social-links a {
+      margin: 0 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #00ff88;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #00ff88;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid #0f3;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="assests/images/logo.png" alt=""></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="suggestion-box.html" class="nav-items">Suggestion Area</a>
+            <a href="search.html" class="nav-items">Search Ideas</a>
+             <a href="blog.html" class="nav-items">Blogs</a>
+            <a href="aboutus.html"  class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Write your message..." required></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <div class="info-item">
+        <p><span>Email:</span> support@odds&ends.com</p>
+      </div>
+      <div class="info-item">
+        <p><span>Phone:</span> +91 98765 43210</p>
+      </div>
+      <div class="info-item">
+        <p><span>Location:</span> Gaziabad, India</p>
+      </div>
+
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="#">🌐 YouTube</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 ODDS&ENDS | Built with ♻️ creativity for a sustainable tomorrow.</p>
+  </footer>
+
+
+
+  <script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAPNsPDBFiUQoT9beOv1P-TmlTTZwsZN7U",
+  authDomain: "waste2craft-6abcb.firebaseapp.com",
+  projectId: "waste2craft-6abcb",
+  storageBucket: "waste2craft-6abcb.firebasestorage.app",
+  messagingSenderId: "591514904548",
+  appId: "1:591514904548:web:d6e3b0f0495a82099049f1",
+  measurementId: "G-JKTMTCWFF0"
+    };
+
+    
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Form Submission
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      try {
+        await addDoc(collection(db, "contactMessages"), {
+          name: name,
+          email: email,
+          message: message,
+          timestamp: new Date()
+        });
+
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("❌ Failed to send message. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>

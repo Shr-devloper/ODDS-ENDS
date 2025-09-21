@@ -1,0 +1,187 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #000000);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-items {
+    color: rgb(62, 89, 121);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-items:hover {
+    color: #76ff03;
+    transform: translateY(-3px);
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.input-label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 60%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a1a, #222);
+  color: #f8f8f8;
+  border: 2px solid #444;
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+input[type="text"]:focus {
+  border-color: #00ffd5;
+  box-shadow: 0 0 12px #00ffd5;
+  outline: none;
+}
+
+.input-section {
+  margin-top: 50px;
+  padding: 60px 0;
+  background: linear-gradient(145deg, #101010, #191919);
+  border-radius: 18px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #00ffd5;
+  margin-bottom: 25px;
+  text-shadow: 0 0 5px rgba(0, 255, 213, 0.5);
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #00ffd5, #00aaff);
+  color: #000;
+  font-size: 1.15rem;
+  padding: 14px 38px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 213, 0.3);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 18px rgba(0, 204, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.project-ideas {
+  margin-top: 60px;
+}
+
+.ideas-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.idea-card {
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.idea-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 10px 30px rgba(0, 255, 213, 0.2);
+}
+
+.idea-card h3 {
+  font-size: 1.4rem;
+  color: #00ffd5;
+  margin-bottom: 12px;
+}
+
+.idea-card p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: #cccccc;
+}
+
+.idea-card button {
+  background: linear-gradient(90deg, #00ffd5, #00aaff);
+  color: #000;
+  font-size: 1rem;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.idea-card button:hover {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+footer {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid rgb(15, 20, 16);
+    }
+    footer a {
+      color: #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }

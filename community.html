@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Waste-to-Craft — Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg1: #0f2027;
+            --bg2: #081c15;
+            --accent: #00ff88;
+            --muted: #cfcfcf;
+            --card: #121212;
+            --glass: rgba(255, 255, 255, 0.04);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top left, var(--bg1), var(--bg2), #000);
+            color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 28px;
+            backdrop-filter: blur(6px);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
+            border-bottom: 1px solid rgba(0, 255, 136, 0.06);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .brand h1 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin: 0
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        button,
+        .btn {
+            background: linear-gradient(135deg, var(--accent), #9d7eff);
+            color: #021;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+            padding: 8px 10px;
+            border-radius: 10px
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 28px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 28px
+        }
+
+        /* left column: feed */
+        .left {
+            min-height: 80vh
+        }
+
+        .upload-card,
+        .post-card,
+        .profile-card {
+            background: var(--glass);
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .upload-card h3 {
+            margin: 0 0 10px;
+            color: var(--accent)
+        }
+
+        .upload-row {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        input[type="file"] {
+            display: block
+        }
+
+        input[type=text],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: transparent;
+            color: #fff
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .small {
+            font-size: 0.88rem;
+            color: var(--muted)
+        }
+
+        .profile-card img.avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.04)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px
+        }
+
+        .comment-list {
+            margin-top: 10px
+        }
+
+        .comment {
+            padding: 8px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.25);
+            margin-bottom: 6px
+        }
+
+        /* responsive */
+        @media (max-width:980px) {
+            .container {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 8px;
+            border-radius: 8px;
+            background: rgba(0, 255, 136, 0.06);
+            color: var(--accent);
+        }
+        footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid #0f3;
+    }
+    footer a {
+      color: #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="brand">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <path d="M3 12a9 9 0 1 0 9-9" stroke="#00ff88" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <h1>ODDS&ENDS Community</h1>
+        </div>
+
+        <div class="nav-actions">
+            <span id="welcomeText" class="small" style="margin-right:8px"></span>
+            <button id="btn-profile" class="ghost" style="display:none">Profile</button>
+            <button id="btn-logout" class="ghost" style="display:none">Logout</button>
+            <button id="btn-login" class="btn">Login / Sign up</button>
+        </div>
+    </nav>
+
+    <section class="container">
+        <main class="left">
+            <!-- Upload -->
+            <div class="upload-card" id="uploadCard">
+                <h3>Share your craft</h3>
+                <form id="postForm">
+                    <div style="margin-bottom:8px"><input id="postTitle" type="text"
+                            placeholder="Title (e.g. Bottle Planter)" required></div>
+                    <div style="margin-bottom:8px"><textarea id="postDesc"
+                            placeholder="Tell people what you made (materials used, time, tips)"></textarea></div>
+                    <div style="margin-bottom:10px" class="center">
+                        <input id="postImage" type="file" accept="image/*" />
+                        <button class="btn" type="submit">Post</button>
+                    </div>
+                    <div id="uploadStatus" class="small" style="color:var(--muted)"></div>
+                </form>
+            </div>
+
+            <!-- Feed -->
+            <div id="feed"></div>
+        </main>
+
+        <!-- Right column -->
+        <aside>
+            <div class="profile-card" id="profileCard">
+                <div style="display:flex;gap:12px;align-items:center">
+                    <img src="" class="avatar" id="profileAvatar" alt="avatar" />
+                    <div>
+                        <div id="profileName" style="font-weight:700">Guest</div>
+                        <div class="small" id="profileEmail">Not logged in</div>
+                    </div>
+                </div>
+
+                <div style="margin-top:12px">
+                    <div class="small">Saved posts</div>
+                    <div id="savedList" style="margin-top:10px"></div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <h3 style="margin:0 0 8px;color:var(--accent)">Community Challenge</h3>
+                <p class="small" style="margin:0 0 10px">This week: Create something from plastic bottles. Tag
+                    #bottlechallenge — best entry featured on our channel!</p>
+                <div style="display:flex;gap:8px">
+                    <button class="ghost">Join</button>
+                    <button class="ghost">Vote</button>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- LOGIN MODAL (simple) -->
+    <div id="loginModal"
+        style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60">
+        <div
+            style="width:360px;padding:20px;border-radius:12px;background:#080808;border:1px solid rgba(0,255,136,0.06)">
+            <h3 style="margin-top:0;color:var(--accent)">Sign in / Sign up</h3>
+            <input id="authEmail" type="email" placeholder="Email"
+                style="width:100%;padding:10px;margin:8px 0;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06)">
+            <input id="authPass" type="password" placeholder="Password"
+                style="width:100%;padding:10px;margin:8px 0;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06)">
+            <div style="display:flex;gap:8px;margin-top:8px">
+                <button class="btn" id="btnSignIn">Sign In</button>
+                <button class="ghost" id="btnSignUp">Sign Up</button>
+                <button class="ghost" id="btnCloseModal">Close</button>
+            </div>
+            <div id="authMsg" class="small" style="margin-top:10px;color:var(--muted)"></div>
+        </div>
+    </div>
+
+     <footer>
+    <p>© 2025 ODDS&ENDS| Built with ♻️ creativity for a sustainable tomorrow. <br> Connect with us on <a href="#">YouTube</a> & <a href="#">Instagram</a></p>
+  </footer>
+    <!-- Firebase SDK & App Script -->
+    <script type="module">
+        // ---------- FIREBASE SETUP ----------
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, doc, setDoc, getDocs, query, orderBy, onSnapshot, updateDoc, arrayUnion, arrayRemove, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
+        import { serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // ← REPLACE THIS WITH YOUR FIREBASE CONFIG ←
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPNsPDBFiUQoT9beOv1P-TmlTTZwsZN7U",
+            authDomain: "waste2craft-6abcb.firebaseapp.com",
+            projectId: "waste2craft-6abcb",
+            storageBucket: "waste2craft-6abcb.firebasestorage.app",
+            messagingSenderId: "591514904548",
+            appId: "1:591514904548:web:d6e3b0f0495a82099049f1",
+            measurementId: "G-JKTMTCWFF0"
+        };
+
+        const firebaseApp = initializeApp(firebaseConfig);
+        const auth = getAuth(firebaseApp);
+        const db = getFirestore(firebaseApp);
+        const storage = getStorage(firebaseApp);
+
+        // ---------- DOM ----------
+        const btnLogin = document.getElementById('btn-login');
+        const loginModal = document.getElementById('loginModal');
+        const btnCloseModal = document.getElementById('btnCloseModal');
+        const btnSignUp = document.getElementById('btnSignUp');
+        const btnSignIn = document.getElementById('btnSignIn');
+        const authEmail = document.getElementById('authEmail');
+        const authPass = document.getElementById('authPass');
+        const authMsg = document.getElementById('authMsg');
+        const welcomeText = document.getElementById('welcomeText');
+        const btnLogout = document.getElementById('btn-logout');
+        const btnProfile = document.getElementById('btn-profile');
+
+        const postForm = document.getElementById('postForm');
+        const postTitle = document.getElementById('postTitle');
+        const postDesc = document.getElementById('postDesc');
+        const postImage = document.getElementById('postImage');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const feed = document.getElementById('feed');
+
+        const profileName = document.getElementById('profileName');
+        const profileEmail = document.getElementById('profileEmail');
+        const profileAvatar = document.getElementById('profileAvatar');
+        const savedList = document.getElementById('savedList');
+
+        // ---------- AUTH UI ----------
+        btnLogin.addEventListener('click', () => { loginModal.style.display = 'flex'; });
+        btnCloseModal.addEventListener('click', () => { loginModal.style.display = 'none'; authMsg.textContent = ''; });
+        btnSignUp.addEventListener('click', async () => {
+            const email = authEmail.value.trim(), pass = authPass.value.trim();
+            if (!email || !pass) { authMsg.textContent = 'Enter email & password'; return; }
+            try {
+                const userCred = await createUserWithEmailAndPassword(auth, email, pass);
+                // Create a minimal user doc
+                await setDoc(doc(db, 'users', userCred.user.uid), { email: email, displayName: email.split('@')[0], saved: [] });
+                authMsg.textContent = 'Account created! You are signed in.';
+            } catch (err) { authMsg.textContent = err.message; }
+        });
+
+        btnSignIn.addEventListener('click', async () => {
+            const email = authEmail.value.trim(), pass = authPass.value.trim();
+            if (!email || !pass) { authMsg.textContent = 'Enter email & password'; return; }
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                authMsg.textContent = 'Signed in!';
+            } catch (err) { authMsg.textContent = err.message; }
+        });
+
+        btnLogout.addEventListener('click', async () => {
+            await signOut(auth);
+        });
+
+        // ---------- AUTH STATE ----------
+        let currentUser = null;
+        onAuthStateChanged(auth, async (user) => {
+            currentUser = user;
+            if (user) {
+                welcomeText.textContent = `Hi, ${user.email.split('@')[0]}`;
+                btnLogin.style.display = 'none';
+                btnLogout.style.display = 'inline-block';
+                btnProfile.style.display = 'inline-block';
+                loginModal.style.display = 'none';
+                // load profile
+                const userDoc = await getDoc(doc(db, 'users', user.uid));
+                const udata = userDoc.exists() ? userDoc.data() : {};
+                profileName.textContent = udata.displayName || user.email.split('@')[0];
+                profileEmail.textContent = user.email;
+                profileAvatar.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profileName.textContent)}&background=0D9488&color=fff&size=128`;
+                loadSavedPosts();
+            } else {
+                welcomeText.textContent = '';
+                btnLogin.style.display = 'inline-block';
+                btnLogout.style.display = 'none';
+                btnProfile.style.display = 'none';
+                profileName.textContent = 'Guest';
+                profileEmail.textContent = 'Not logged in';
+                profileAvatar.src = '';
+                savedList.innerHTML = '';
+            }
+        });
+
+        // ---------- POST UPLOAD ----------
+        postForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!currentUser) { alert('Please sign in to post.'); return; }
+            const title = postTitle.value.trim();
+            const desc = postDesc.value.trim();
+            const file = postImage.files[0];
+            if (!title || !file) { alert('Provide a title and image'); return; }
+
+            uploadStatus.textContent = 'Uploading image...';
+            try {
+                // upload image
+                const imgRef = storageRef(storage, `posts/${currentUser.uid}_${Date.now()}_${file.name}`);
+                await uploadBytes(imgRef, file);
+                const url = await getDownloadURL(imgRef);
+
+                // add post doc
+                const docRef = await addDoc(collection(db, 'posts'), {
+                    title,
+                    description: desc || '',
+                    imageUrl: url,
+                    uid: currentUser.uid,
+                    author: profileName.textContent || currentUser.email.split('@')[0],
+                    likes: [],
+                    createdAt: serverTimestamp()
+                });
+                postForm.reset();
+                uploadStatus.textContent = 'Posted successfully!';
+                setTimeout(() => uploadStatus.textContent = '', 2500);
+            } catch (err) {
+                console.error(err); uploadStatus.textContent = 'Upload failed';
+            }
+        });
+
+        // ---------- RENDER FEED (real-time) ----------
+        const postsQuery = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));
+        onSnapshot(postsQuery, snapshot => {
+            feed.innerHTML = '';
+            snapshot.forEach(docSnap => {
+                const p = { id: docSnap.id, ...docSnap.data() };
+                feed.appendChild(createPostCard(p));
+            });
+        });
+
+        // ---------- HELPERS ----------
+        function createPostCard(post) {
+            const card = document.createElement('div'); card.className = 'post-card upload-card';
+            // image
+            const img = document.createElement('img'); img.src = post.imageUrl || ''; img.alt = post.title || '';
+            card.appendChild(img);
+
+            // meta
+            const meta = document.createElement('div'); meta.className = 'post-meta';
+            const left = document.createElement('div'); left.innerHTML = `<strong>${escapeHtml(post.title)}</strong><div class="small">by ${escapeHtml(post.author)}</div>`;
+            const right = document.createElement('div'); right.className = 'post-actions';
+            // likes
+            const likeBtn = document.createElement('button'); likeBtn.className = 'ghost'; likeBtn.textContent = `❤️ ${post.likes?.length || 0}`;
+            likeBtn.onclick = () => toggleLike(post.id);
+            // save
+            const saveBtn = document.createElement('button'); saveBtn.className = 'ghost'; saveBtn.textContent = '🔖 Save';
+            saveBtn.onclick = () => toggleSave(post.id);
+            right.appendChild(likeBtn); right.appendChild(saveBtn);
+            meta.appendChild(left); meta.appendChild(right);
+            card.appendChild(meta);
+
+            // description
+            const desc = document.createElement('div'); desc.className = 'small'; desc.textContent = post.description || '';
+            card.appendChild(desc);
+
+            // comment input
+            const commentBox = document.createElement('div'); commentBox.style.marginTop = '10px';
+            const input = document.createElement('input'); input.placeholder = 'Write a comment...'; input.style.width = '70%'; input.style.padding = '8px';
+            const cbtn = document.createElement('button'); cbtn.className = 'ghost'; cbtn.textContent = 'Comment';
+            cbtn.onclick = async () => {
+                if (!currentUser) { alert('Sign in to comment'); return; }
+                const text = input.value.trim(); if (!text) return;
+                try {
+                    await addDoc(collection(db, 'posts', post.id, 'comments'), { uid: currentUser.uid, text, author: profileName.textContent, createdAt: new Date() });
+                    input.value = '';
+                } catch (err) { console.error(err); alert('Failed to add comment'); }
+            };
+            commentBox.appendChild(input); commentBox.appendChild(cbtn);
+            card.appendChild(commentBox);
+
+            // comments list (one-time load, not realtime for simplicity)
+            const commentsDiv = document.createElement('div'); commentsDiv.className = 'comment-list';
+            // load comments
+            (async () => {
+                const snaps = await getDocs(collection(db, 'posts', post.id, 'comments'));
+                snaps.forEach(cs => {
+                    const c = cs.data();
+                    const el = document.createElement('div'); el.className = 'comment'; el.innerHTML = `<small style="font-weight:600">${escapeHtml(c.author)}</small> <div>${escapeHtml(c.text)}</div>`;
+                    commentsDiv.appendChild(el);
+                });
+            })();
+            card.appendChild(commentsDiv);
+
+            return card;
+        }
+
+        // ---------- LIKE/UNLIKE ----------
+        async function toggleLike(postId) {
+            if (!currentUser) { alert('Sign in to like'); return; }
+            const pRef = doc(db, 'posts', postId);
+            const snap = await getDoc(pRef);
+            const data = snap.data();
+            const liked = data.likes?.includes(currentUser.uid);
+            try {
+                await updateDoc(pRef, { likes: liked ? arrayRemove(currentUser.uid) : arrayUnion(currentUser.uid) });
+            } catch (err) { console.error(err); }
+        }
+
+        // ---------- SAVE / UNSAVE ----------
+        async function toggleSave(postId) {
+            if (!currentUser) { alert('Sign in to save'); return; }
+            const userRef = doc(db, 'users', currentUser.uid);
+            const userSnap = await getDoc(userRef);
+            const udata = userSnap.data() || {};
+            const saved = udata.saved || [];
+            try {
+                await updateDoc(userRef, { saved: saved.includes(postId) ? arrayRemove(postId) : arrayUnion(postId) });
+                loadSavedPosts();
+            } catch (err) { console.error(err); }
+        }
+
+        // ---------- LOAD SAVED POSTS ----------
+        async function loadSavedPosts() {
+            savedList.innerHTML = '';
+            if (!currentUser) return;
+            const userRef = doc(db, 'users', currentUser.uid);
+            const userSnap = await getDoc(userRef);
+            const udata = userSnap.data() || {};
+            const saved = udata.saved || [];
+            if (saved.length === 0) { savedList.innerHTML = '<div class="small">No saved posts</div>'; return; }
+            saved.forEach(async (pid) => {
+                const pSnap = await getDoc(doc(db, 'posts', pid));
+                if (pSnap.exists()) {
+                    const p = pSnap.data();
+                    const el = document.createElement('div'); el.className = 'small'; el.style.marginBottom = '8px';
+                    el.innerHTML = `<strong>${escapeHtml(p.title)}</strong>`;
+                    savedList.appendChild(el);
+                }
+            });
+        }
+
+        // ---------- UTIL ----------
+        function escapeHtml(s) { if (!s) return ''; return s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;'); }
+
+        // close modal on outside click
+        window.addEventListener('click', (e) => { if (e.target === loginModal) loginModal.style.display = 'none'; });
+
+    </script>
+</body>
+
+</html>

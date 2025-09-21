@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vertical Gardens from Bottles | Waste-to-Craft</title>
+  <link rel="stylesheet" href="blogs1.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html"><img src="assests/images/logo.png" alt="logo"></a>
+    <div class="links">
+      <a href="blog.html">Blogs</a>
+      <a href="community.html">Community</a>
+      <a href="suggestion-box.html">Submit Idea</a>
+      <a href="search.html">Search</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="article">
+
+      <!-- Quick Take Summary -->
+      <div class="quick-take">
+        <h1>Grow Vertically: Plastic Bottle Garden</h1>
+        <ul>
+          <li>Transform waste plastic into hanging planters</li>
+          <li>Herbs, succulents & trailing plants thrive</li>
+          <li>Low cost, fun project in 1–3 hrs</li>
+          <li>Small-space friendly (balconies, patios)</li>
+        </ul>
+      </div>
+
+      <img class="hero-img" src="assests/images/bottle-vertical.jpg" alt="Vertical garden from plastic bottles">
+
+      <!-- Content + Sidebar grid -->
+      <div class="article-grid">
+        <section class="content">
+
+          <h2>📋 What You’ll Need</h2>
+          <ul>
+            <li>Plastic bottles (1–2 L, cleaned, labels removed)</li>
+            <li>Potting mix + compost</li>
+            <li>Drill or heated nail for drainage</li>
+            <li>String/twine or frame (wooden pallets or wire grid)</li>
+            <li>Small plants: herbs, succulents, trailing vines</li>
+          </ul>
+
+          <h2>🛠️ How to Build It</h2>
+          <ol>
+            <li><strong>Prepare bottles:</strong> Clean, dry, remove label.</li>
+            <li><strong>Make planting opening:</strong> Cut a flap on side or open top, leaving edges smooth.</li>
+            <li><strong>Drainage:</strong> Drill small holes, use stones at bottom.</li>
+            <li><strong>Mount bottles:</strong> Thread twine or attach to frame.</li>
+            <li><strong>Fill & Plant:</strong> Mix soil, plant, water lightly.</li>
+          </ol>
+
+          <button class="toggle-more">More Tips & Variations ↓</button>
+          <div class="more-section" style="display:none;">
+            <h2>💡 Tips, Variations & Care</h2>
+            <ul>
+              <li>Paint bottles using outdoor-safe paints or wrap with cloth for aesthetic finish.</li>
+              <li>Arrange in spiral or zigzag pattern for visual interest.</li>
+              <li>Water carefully—in early morning or evening to avoid leaf burn.</li>
+              <li>Rotate plants occasionally for even sunlight exposure.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <aside class="sidebar">
+          <div class="kv"><span>Time</span><strong>1-3 hrs</strong></div>
+          <div class="kv"><span>Skill</span><strong>Beginner</strong></div>
+          <div class="kv"><span>Cost</span><strong>Low</strong></div>
+          <div class="kv"><span>Best For</span><strong>Balconies, Small Spaces</strong></div>
+
+          <h3>Plants to try</h3>
+          <ul>
+            <li>Basil, Mint, Parsley</li>
+            <li>Succulents like Jade or Echeveria</li>
+            <li>Trailing: String of Pearls, Creeping Thyme</li>
+          </ul>
+
+          <div class="related">
+            <h3>Related Reads</h3>
+            <a class="related-card" href="#">Newspaper Wall Art Guide →</a><br>
+            <a class="related-card" href="#">E-Waste Jewelry Projects →</a>
+          </div>
+
+          <div class="back-link" style="margin-top:20px;">
+            <a href="blog.html">← Back to Blogs</a>
+          </div>
+        </aside>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <small>Published by ODDS&ENDS· Sources: Instructables, UrbanPlant · © 2025 ODDS&ENDS</small>
+  </footer>
+
+<script>
+  // Toggle “More Tips & Variations”
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.toggle-more');
+    const section = document.querySelector('.more-section');
+    btn.addEventListener('click', () => {
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        btn.textContent = 'Show Less ↑';
+      } else {
+        section.style.display = 'none';
+        btn.textContent = 'More Tips & Variations ↓';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

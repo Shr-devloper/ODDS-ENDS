@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userId = localStorage.getItem("userId");
+
+            // Redirect to login page if not logged in
+            if (!userId) {
+                window.location.href = "signin.html";
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.png" alt=""></a>
+            <a href="profile.html" class="nav-items">Profile</a>
+            <a href="suggestion-box.html" class="nav-items">Suggestion Area</a>
+            <a href="search.html" class="nav-items">Search Ideas</a>
+             <a href="blog.html" class="nav-items">Blogs</a>
+            <a href="abouutus.html"  class="nav-items">About</a>
+            <a href="community.html" class="nav-items">Community</a>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img-5.webp" alt="Image 1">
+                <div class="carousel-caption">
+                    <h1>Transform Waste into Art</h1>
+                    <p>Unleash your creativity by turning everyday waste into stunning crafts. Explore ideas, get
+                        inspired, and contribute to a greener planet! </p>
+                    <a href="search.html">
+                        <div class="learnmore">Get Inspired</div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img-6.webp" alt="Image 2">
+                <div class="carousel-caption1">
+                    <h1>Sustainable Creativity Starts Here</h1>
+                    <p>From plastic bottles to old newspapers, discover how small changes can lead to big impacts. Join
+                        our community and make a difference! </p>
+                    <a href="suggestion-box.html">
+                        <div class="learnmore1">Start Creating</div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img-7.webp" alt="Image 3">
+                <div class="carousel-caption2">
+                    <h1>Your Waste, Your Masterpiece</h1>
+                    <p>Redefine trash as treasure! Learn how to repurpose waste materials into innovative and beautiful
+                        artworks.</p>
+                    <div class="learnmore2">Learn More</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="goal">
+        <div><img
+                src="DALL_E_2025-03-07_19.35.43_-_A_dark_green-themed_background_image_with_the_word__GOAL__artistically_designed_using_elements_related_to_eco-friendly_art_and_recycling._The_text_sho-removebg-preview.png"
+                alt="goal"></div>
+    </section>
+    <section class="first">
+        <div>
+            <span>"Turning Trash into Treasure"
+            </span>
+            <span> Explore how discarded materials can be transformed into stunning artwork and functional crafts. Every
+                waste item has potential waiting to be discovered</span>
+        </div>
+
+        <div class="secImg">
+            <img src="img-8.webp" alt="">
+        </div>
+    </section>
+    <div class="seperation"></div>
+
+    <section class="first second">
+
+        <div class="secImg">
+            <img src="img-9.webp" alt="">
+        </div>
+
+        <div>
+            <span>"Creative Sustainability"
+            </span>
+            <span> Join us in promoting sustainable art by using recycled materials to create something new and
+                beautiful. Reduce waste, inspire creativity, and make a difference.</span>
+        </div>
+    </section>
+
+    <div class="seperation"></div>
+
+
+    <section class="first third">
+
+        <div>
+            <span> "Eco-Friendly Creations"
+            </span>
+            <span>From plastic bottle planters to newspaper sculptures, our creative projects showcase the endless
+                possibilities of upcycled art. Discover new ways to repurpose everyday waste.</span>
+
+        </div>
+
+        <div class="secImg">
+            <img src="img-11.webp" alt="">
+        </div>
+    </section>
+
+    <div class="seperation"></div>
+
+    <section class="first fourth">
+
+        <div class="secImg">
+            <img src="img-10.webp" alt="">
+        </div>
+        <div>
+            <span> "Inspire, Create, Reuse"
+            </span>
+            <span> Our mission is to spark creativity while contributing to environmental conservation. Share your craft
+                ideas and inspire a community of eco-friendly artists.</span>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 ODDS&ENDS| Built with ♻️ creativity for a sustainable tomorrow. <br> Connect with us on <a
+                href="#">YouTube</a> & <a href="#">Instagram</a></p>
+    </footer>
+    <script src="script.js"></script>
+    <script type="module" src="index.js"></script>
+    <script>
+        window.onload = async function () {
+            const username = localStorage.getItem('username');
+            const userId = localStorage.getItem('userId');
+
+            if (!username || !userId) {
+                window.location.href = 'signin.html'; // Redirect to login page if not logged in
+            } else {
+                document.getElementById("username-display").innerText = `Welcome, ${username}`;
+                document.getElementById("credits-display").innerText = `Credits: ${localStorage.getItem('credits')}`;
+                document.getElementById('logout-btn').style.display = 'block';
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'signin.html';
+        }
+    </script>
+
+</body>
+
+</html>
